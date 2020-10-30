@@ -40,6 +40,8 @@ function WeatherCard({ weather, weatherHly }) {
         return "clear-sky";
       case "Smoke":
         return "smoke-day";
+      case "Mist":
+          return "mist-day";
       default:
         return "";
     }
@@ -91,7 +93,7 @@ function WeatherCard({ weather, weatherHly }) {
   };
 
   return (
-    <div>
+    <div >
       <div
         key={Math.random() * Date.now()}
         className={`weather-card main-card ${getWeather()} ${getTemp()}`}

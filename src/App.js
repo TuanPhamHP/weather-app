@@ -114,6 +114,8 @@ function App() {
         return "clear-sky";
       case "Smoke":
         return "smoke-day";
+        case "Mist":
+          return "mist-day";
       default:
         return "";
     }

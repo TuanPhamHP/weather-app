@@ -23,9 +23,10 @@ sup {
     border: 1px solid transparent;
     background-color: transparent;
     backdrop-filter: opacity(0.94);
-    color: white;
+    color: rgb(37, 36, 38);
     width: 100px;
     border-radius: 6px;
+    border: 1px solid rgb(37, 36, 38);
     &:focus {
       outline: none;
     }
@@ -179,4 +180,7 @@ sup {
 }
 .smoke-day {
   @include setbg("../../images/smoke.jpg", center, top, cover, no-repeat);
+}
+.mist-day {
+  @include setbg("../../images/misty.jpg", center, top, cover, no-repeat);
 }
