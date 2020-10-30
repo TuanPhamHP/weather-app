@@ -125,7 +125,7 @@ function App() {
       <form action="submit" onSubmit={handleSubmit} className="search-form">
         <input
           type="text"
-          placeholder="search here"
+          placeholder="search hereeeeeee"
           onChange={handleUpdate}
           value={search}
           className="search-box"
