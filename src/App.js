@@ -128,6 +128,7 @@ function App() {
           placeholder="search here"
           onChange={handleUpdate}
           value={search}
+          className="search-box"
         />
       </form>
       <WeatherCard weather={weather} weatherHly={weatherHly} />
