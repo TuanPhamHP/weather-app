@@ -1,0 +1,182 @@
+@mixin setbg($url, $posx, $posy, $size, $repeat) {
+  background: url($url) $posx $posy/$size $repeat;
+}
+.weather-card {
+  border-radius: 6px;
+}
+sup {
+  font-size: 20px;
+}
+.main-card {
+  background: transparent !important;
+  overflow: hidden;
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  box-shadow: 0px 0px 1px 3px #5a5a5a49;
+  position: relative;
+  .set-default {
+    cursor: pointer;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    border: 1px solid transparent;
+    background-color: transparent;
+    backdrop-filter: opacity(0.94);
+    color: white;
+    width: 100px;
+    border-radius: 6px;
+    &:focus {
+      outline: none;
+    }
+  }
+  p {
+    z-index: 2;
+  }
+  .weather-name {
+    line-height: 70px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .weather-temp {
+    height: 70px;
+    line-height: 70px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 1px rgb(37, 37, 37);
+  }
+  .weather-temp--minmax {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0px 1px rgb(37, 37, 37);
+    }
+    sup {
+      font-size: 16px;
+    }
+  }
+  .weather-description {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 1px rgb(37, 37, 37);
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .weather-humidity {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 1px rgb(37, 37, 37);
+  }
+  .weather-time {
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 1px rgb(37, 37, 37);
+  }
+  .weather-GMT {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 1px rgb(37, 37, 37);
+  }
+  .notice {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgb(37, 37, 37);
+    padding: 5px 0px;
+    display: none;
+  }
+  .hourly-wrapper {
+    display: flex;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    .hourly-items {
+      min-width: 120px;
+      padding: 5px 7px;
+      text-align: center;
+      color: #fff;
+      border-radius: 5px;
+      .time {
+        position: relative;
+        text-shadow: 0px 1px 2px rgb(37, 37, 37);
+        &::before {
+          position: absolute;
+          content: "";
+          left: 50%;
+          bottom: -2px;
+          transform: translate(-50%, 0%);
+          width: 20px;
+          height: 2px;
+          border-radius: 4px;
+          background-color: rgba(255, 255, 255, 0.527);
+        }
+      }
+      .temp {
+        text-shadow: 0px 1px 2px rgb(37, 37, 37);
+        sup {
+          font-size: 10px;
+          text-shadow: 0px 1px 2px rgb(37, 37, 37);
+        }
+      }
+      .description {
+        text-shadow: 0px 1px 2px rgb(37, 37, 37);
+        font-size: 16px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+.cold-day {
+  .notice-cold {
+    display: block;
+  }
+}
+.fresh-day {
+  .notice-cool {
+    display: block;
+  }
+}
+.hot-day {
+  .notice-hot {
+    display: block;
+  }
+}
+.cloudy-day {
+  @include setbg("../../images/cloudy.jpg", right, top, cover, no-repeat);
+}
+.clear-sky {
+  @include setbg(
+    "../../images/sky-clear.jpg",
+    center,
+    center,
+    cover,
+    no-repeat
+  );
+}
+.rainny-day {
+  @include setbg("../../images/10107.jpg", center, top, cover, no-repeat);
+}
+.smoke-day {
+  @include setbg("../../images/smoke.jpg", center, top, cover, no-repeat);
+}
